@@ -1,0 +1,53 @@
+
+delta : 10.0 # Rudder angle [degree]
+npm: 10.0 # Propeller revolution [rounds per minute]
+
+# Basic parameters
+roh : 1025.0  # Water density
+L_pp : 7.00  # Ship length between perpendiculars [m]
+B : 1.27  # Ship breadth[m]
+d : 0.46  # Draft[m]
+nabla : 3.27  # Displacement[m^3]
+x_G : 0.25  # Longitudinal coordinate of center of gravity of ship[m]
+C_b : 0.810  # Block coefficient[-]
+D_p : 0.216  # Propeller diameter[m]
+H_R : 0.345  # Rudder span length[m]
+A_R : 0.0539  # Profile area of movable part of mariner rudder[m^2]
+t_P : 0.220  # Thrust deduction factor
+w_P0 : 0.40  # Wake coefficient at propeller position in straight moving
+m_x_dash : 0.022  # Added masses of x axis direction
+m_y_dash : 0.223  # Added masses of y axis direction
+J_z_dash : 0.011  # Added moment of inertia
+t_R : 0.387  # Steering resistance deduction factor
+x_R_dash : -0.500  # Relative position of the rudder
+a_H : 0.312  # Rudder force increase factor
+x_H_dash : -0.464  #    Steering force increment position
+Y_R_minus : 0.395  # Rectification coefficient
+Y_R_plus : 0.640  # Rectification coefficient
+l_r_dash : -0.710  # Rudder position relative to the captain
+x_P_dash : -0.480  # Propeller position relative to the captain
+epsilon : 1.09  # Ratio of wake fraction at propeller and rudder positions 
+kappa : 0.50  # An experimental constant for expressing u R
+f_alpha : 2.747  # Rudder lift gradient coefficient
+
+# Hydrodynamic parameters
+k_0 : 0.2931
+k_1 : -0.2753
+k_2 : -0.1385
+R_0_dash : 0.022
+X_vv_dash : -0.040
+X_vr_dash : 0.002
+X_rr_dash : 0.011
+X_vvvv_dash : 0.771
+Y_v_dash : -0.315
+Y_r_dash : 0.083
+Y_vvv_dash : -1.607
+Y_vvr_dash : 0.379
+Y_vrr_dash : -0.391
+Y_rrr_dash : 0.008
+N_v_dash : -0.137
+N_r_dash : -0.049
+N_vvv_dash : -0.030
+N_vvr_dash : -0.294
+N_vrr_dash : 0.055
+N_rrr_dash : -0.013
