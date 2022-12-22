@@ -1,0 +1,14 @@
+# Parameters for simulation
+
+step: 0.1 # Stepsize for integration []
+time: 10.0 # Simulation time [sec]
+
+initYaw: 0.0 # 0 degree aligned with positive x-axis, 90 degree aligned with positive y-axis [degree]
+initX: 0.0 # Carthesian global coordinates, vessel center [meter]
+initY: 0.0 # Carthesian global coordinates, vessel center [meter]
+
+initYawRate: 0.0 # Initial yaw rate in [degree/s^2]
+initXVelocity: 15.5 # X Velocity [m/s]
+initYVelocity: 0.0 # Y Velocity [m/s]
+
+terminal_output: true # Write result struct to terminal if true
