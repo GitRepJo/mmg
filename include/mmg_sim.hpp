@@ -71,9 +71,9 @@ public:
         std::vector<double> y_vel; // Velocity y in m/s two dimensional carthesian global coordinates
         std::vector<double> x_acc; // Acceleration x in m/s^2 two dimensional carthesian global coordinates
         std::vector<double> y_acc; // Acceleration y in m/s^2 two dimensional carthesian global coordinates
-        std::vector<double> yaw; // Orientation in global coordinates relative to north in degree
-        std::vector<double> yaw_rate; // Yaw rate in degree/s
-        std::vector<double> yaw_acc;  // yaw rate acceleration in degree/s*s
+        std::vector<double> yaw; // Orientation in global coordinates relative to north in radians
+        std::vector<double> yaw_rate; // Yaw rate in radians/s
+        std::vector<double> yaw_acc;  // yaw rate acceleration in radians/s*s
     };
 
     /**

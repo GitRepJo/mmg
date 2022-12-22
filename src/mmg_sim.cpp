@@ -74,10 +74,10 @@ MMGSim::resultMMG MMGSim::calcResult(parameterSim vS, std::vector<std::array<dou
     {
         // Access first array element of vector of arrays "states" at position i. In this implementation, the 
         // array is of size 3 because the state array is of size 3 (only yaw rate).
-        res.yaw_rate.push_back(states.at(i)[3]);
-        res.x_vel.push_back(states.at(i)[1]);
-        res.y_vel.push_back(states.at(i)[2]);
-
+        res.x_vel.push_back(states.at(i)[0]);
+        res.y_vel.push_back(states.at(i)[1]);
+        res.yaw_rate.push_back(states.at(i)[2]);
+        
         res.time.push_back(times.at(i));
 
         double delta_time = res.time.at(i) - res.time.at(i-1);
@@ -89,13 +89,13 @@ MMGSim::resultMMG MMGSim::calcResult(parameterSim vS, std::vector<std::array<dou
          // yaw acceleration = (yaw rate of step - yaw rate of previous step) * time of step
         double yaw_acc = (res.yaw_rate.at(i) - res.yaw_rate.at(i-1)) * delta_time;
         res.yaw_acc.push_back(yaw_acc);
-      
+               
         // Position in x
-        double x_pos = res.x_pos.at(i-1) + res.x_vel.at(i) * delta_time; 
+        double x_pos =(res.x_vel.at(i) * cos(res.yaw.at(i-1)) - res.y_vel.at(i) * sin(res.yaw.at(i-1)))* delta_time + res.x_pos.at(i-1) ; 
         res.x_pos.push_back(x_pos); 
 
         // Position in y 
-        double y_pos = res.y_pos.at(i-1) + res.y_vel.at(i) * delta_time; 
+        double y_pos = (res.x_vel.at(i) * sin(res.yaw.at(i-1)) + res.y_vel.at(i) * cos(res.yaw.at(i-1)))* delta_time + res.y_pos.at(i-1) ;  
         res.y_pos.push_back(y_pos); 
     }
 
@@ -202,11 +202,20 @@ void MMGSim::writeTerminal(MMGSim::resultMMG res)
 {
     for (std::vector<double>::size_type i = 0; i < res.time.size(); i++)
         {
-            double t = round(res.time.at(i)  *100)/100;
-            double x = round(res.x_pos.at(i) *100)/100;
-            double y = round(res.y_pos.at(i) *100)/100;
-            double yaw = round(res.yaw.at(i) *100)/100;
+            double pi = 2 * acos(0.0);
             
-            std::cout <<"t[sec]: "<< t <<" x[m]: "<< x <<" y[m]: "<< y <<" yaw[deg]: " << yaw << '\n' << "\n";
+            
+            double t = round(res.time.at(i)  * 100) / 100;
+            double x = round(res.x_pos.at(i) * 100) / 100;
+            double y = round(res.y_pos.at(i) * 100) / 100;
+            double yaw = round(res.yaw.at(i) * 180/ pi  * 100) / 100;
+
+            double x_vel = round(res.x_vel.at(i) * 100) / 100;
+            double y_vel = round(res.y_vel.at(i) * 100) / 100;
+
+            // U = sqrt(u^2+v^2)
+            double sum_vel = round(sqrt(pow(res.x_vel.at(i),2) + pow(res.y_vel.at(i),2)) *100 ) / 100;
+            
+            std::cout <<"t[sec]: "<< t <<" x[m]: "<< x <<" y[m]: "<< y <<" yaw[deg]: " << yaw << " x_vel[m/s]: " <<x_vel << " y_vel[m/s]: " << y_vel << " U [m/s] "<< sum_vel <<'\n' << "\n";
         } 
 }

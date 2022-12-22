@@ -12,7 +12,7 @@
             "group": "test",
             "type": "shell",
             "command": "cd /home/$USER/git/mmg/build && ./tests "
-        }
+        },
       
     ]
 }

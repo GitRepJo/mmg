@@ -1,6 +1,6 @@
 
-delta : 10.0 # Rudder angle [degree]
-npm: 10.0 # Propeller revolution [rounds per minute]
+delta : 35.0 # Rudder angle [degree]
+npm: 15.5 # Propeller revolution [rounds per second]
 
 # Basic parameters
 roh : 1025.0  # Water density

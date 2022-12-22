@@ -22,6 +22,6 @@ include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${CMAKE_SOURCE_DIR}/yaml-cpp/include)
 
 target_link_libraries(${PROJECT_NAME} yaml-cpp)
-target_link_libraries (${PROJECT_NAME} Eigen3::Eigen)
+target_link_libraries (${PROJECT_NAME} Eigen3::Eigen )
 
 #add_subdirectory(test)
