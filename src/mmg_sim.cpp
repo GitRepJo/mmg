@@ -212,10 +212,7 @@ void MMGSim::writeTerminal(MMGSim::resultMMG res)
 
             double x_vel = round(res.x_vel.at(i) * 100) / 100;
             double y_vel = round(res.y_vel.at(i) * 100) / 100;
-
-            // U = sqrt(u^2+v^2)
-            double sum_vel = round(sqrt(pow(res.x_vel.at(i),2) + pow(res.y_vel.at(i),2)) *100 ) / 100;
             
-            std::cout <<"t[sec]: "<< t <<" x[m]: "<< x <<" y[m]: "<< y <<" yaw[deg]: " << yaw << " x_vel[m/s]: " <<x_vel << " y_vel[m/s]: " << y_vel << " U [m/s] "<< sum_vel <<'\n' << "\n";
+            std::cout <<"t[sec]: "<< t <<" x[m]: "<< x <<" y[m]: "<< y <<" yaw[deg]: " << yaw << " x_vel[m/s]: " <<x_vel << " y_vel[m/s]: " << y_vel <<'\n' << "\n";
         } 
 }

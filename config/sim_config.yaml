@@ -1,6 +1,6 @@
 # Parameters for simulation
 
-step: 0.01 # Stepsize for integration []
+step: 0.1 # Stepsize for integration []
 time: 10.0 # Simulation time [sec]
 
 initYaw: 0.0 # 0 degree aligned with positive x-axis, 90 degree aligned with positive y-axis [degree]

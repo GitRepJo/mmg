@@ -153,16 +153,12 @@ public:
         {
         u_R = u* (1 - w_P)* pm.epsilon* sqrt(pm.eta * pow(1.0 + pm.kappa * (sqrt(1.0 + 8.0 * K_T / (pi * pow(J, 2))) - 1),2)+ (1 - pm.eta));
         }  
-        
-        //std::cout<< "u_R"<< u_R << "v_R" << v_R <<"\n"; 
-        
+                
         double U_R = sqrt(pow(u_R, 2) + pow(v_R, 2)); // Resultant inflow velocity to rudder
         
         double alpha_R = rdelta - atan2(v_R, u_R); // Effective inflow angle to rudder
 
         double F_N = 0.5 * pm.A_R * pm.roh * pm.f_alpha * pow(U_R, 2) * sin(alpha_R); // Froude number based on ship length
-        //std::cout<< "pm.A_R value is" << pm.A_R << "pm.roh" << pm.roh <<"pm.f_alpha is: " <<pm.f_alpha <<"pow(U_R, 2)" <<pow(U_R, 2) << "sin(alpha_R)"<< sin(alpha_R)<<"alpha_R" <<alpha_R <<"\n";
-        //std::cout << "U_R"<<U_R << "\n";
         
         // Surge force around midship acting on ship hull except added mass components X P
         double X_H = ( 
@@ -233,11 +229,6 @@ public:
         
         // Yaw acceleration
         dxdt[2] = (N_H + N_R - pm.x_G * pm.m * (dxdt[1] + u * r)) / (pm.I_zG + pm.J_z + pow(pm.x_G, 2) * pm.m);
-        
-        // Test ode
-        // dxdt[0] = pm.m/(10.0*pm.m) + a/(8.0*pm.m);
-        // dxdt[1] = pm.m/(4.0*pm.m) + dxdt[0]/(4.0*pm.m);
-        // dxdt[2] = pm.m/(2.0*pm.m) + c/(1.0*pm.m);
     }
 };
 #endif //MMG_ODE_HPP
