@@ -107,7 +107,7 @@ public:
 
         double pi = 2*acos(0.0);
 
-        double rdelta = pm.delta * pi / 180; // Rudder angle in radians
+        double rdelta = pm.delta * pi / 180; // Rudder angle in radians, change orientation with negation
    
         double u = x[0]; // Surge velocity at center of gravity
         double v = x[1]; // Lateral velocity at center of gravity
