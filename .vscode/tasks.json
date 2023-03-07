@@ -11,7 +11,7 @@
             "label": "test",
             "group": "test",
             "type": "shell",
-            "command": "cd /home/$USER/git/mmg/build && ./tests "
+            "command": "cd /home/$USER/git/mmg/build/test && ./tests "
         },
       
     ]

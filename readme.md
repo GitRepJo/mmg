@@ -9,8 +9,8 @@ prediction method for ships
 
 For more information look into 
 
-- H. Yasukawa • Y. Yoshimura 2014 " Introduction of MMG standard     
-method for ship maneuvering predictions"   
+- H. Yasukawa • Y. Yoshimura 2014 "Introduction of MMG standard     
+method for ship maneuvering predictions" in JASNAOE 
 
 The program my also serve as a template for ship     
 models with a higher degree of freedom, e.g. 6DoF.      

@@ -24,4 +24,4 @@ include_directories(${CMAKE_SOURCE_DIR}/yaml-cpp/include)
 target_link_libraries(${PROJECT_NAME} yaml-cpp)
 target_link_libraries (${PROJECT_NAME} Eigen3::Eigen )
 
-#add_subdirectory(test)
+add_subdirectory(test)
